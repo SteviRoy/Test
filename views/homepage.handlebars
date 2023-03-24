@@ -1,0 +1,81 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Find Love through Food &#129346; </h1>
+    <p class="lead">Connect with like-minded foodies and find your perfect match.</p>
+    <hr class="my-4">
+    <p>Join Love-Hungry today and start exploring new restaurants, cuisines, and experiences with someone special.</p>
+    {{#unless isAuthenticated}}
+    <div class="text-center">
+      <a class="btn btn-danger btn-lg " href="/signup" role="button">Sign Up Now</a>
+    </div>
+    {{/unless}}
+  </div>
+</div>
+
+<div class="container">
+  <h2>How It Works</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Create Your Profile</h4>
+      <p>Get started by creating a profile that showcases your unique personality and food preferences.</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Explore and Connect</h4>
+      <p>Browse through other users' profiles and connect with people who share your passion for food and adventure.</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Plan Your Next Date</h4>
+      <p>Use our platform to find and book reservations at the best restaurants in town, and impress your date with your food knowledge and taste.</p>
+    </div>
+  </div>
+
+  <hr>
+
+
+  <h2>Featured Users</h2>
+  <div class="row">
+    {{#each users}}
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{{this.profile_picture_url}}" class="card-img" alt="{{this.username}}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{this.username}}</h5>
+                <p class="card-text">{{this.bio}}</p>
+                <a href="/message-board/{{this.id}}" class="btn btn-primary">Send a Message</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <hr>
+
+  <h2>Featured Restaurants</h2>
+  <div class="row">
+    {{#each restaurants}}
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <img src="{{this.image_url}}" class="card-img-top" alt="{{this.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <a href="{{this.reserve_url}}" class="btn btn-primary">Reserve a Table</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<style>
+    body{
+     background-color: #C68CD9;
+    }
+  </style>
+

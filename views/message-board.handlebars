@@ -1,0 +1,70 @@
+<div class='container'>
+  <h1>Message Board</h1>
+
+  --
+  <div class='row'>
+    <div class='col-md-4'>
+      <h4>Users</h4>
+      {{#each users}}
+        <div class='card mb-3'>
+          <div class='row no-gutters'>
+            <div class='col-md-4'>
+              <img
+                src='{{this.profile_picture_url}}'
+                class='card-img'
+                alt='{{this.username}}'
+              />
+            </div>
+            <div class='col-md-8'>
+              <div class='card-body'>
+                <h5 class='card-title'>{{this.username}}</h5>
+                <a
+                  href='/message-board/{{this.id}}'
+                  class='btn btn-primary'
+                >View Messages</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class='col-md-8'>
+      <h4>Messages</h4>
+
+      {{#if displayMessages}}
+        {{#each displayMessages as |message|}}
+          <div class='card mb-3'>
+            <div class='card-body'>
+              <h5 class='card-title'>{{message.sender_id}}
+                to
+                {{message.receiver_id}}</h5>
+              <p class='card-text'>{{message.content}}</p>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <p>No messages yet.</p>
+      {{/if}}
+
+      <form action='/api/messages/{{user.id}}' method='POST'>
+        <div class='form-group'>
+          <label for='message'>New Message:</label>
+          <textarea
+            class='form-control'
+            id='message'
+            name='message'
+            rows='3'
+          ></textarea>
+        </div>
+        <button type='submit' class='btn btn-primary'>Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+    body{
+     background-color: #C68CD9;
+    }
+  </style>

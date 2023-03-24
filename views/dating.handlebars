@@ -1,0 +1,93 @@
+<div class="card-title d-flex justify-content-center card-body text-danger ">
+  <h3 class="">Welcome to Dating Portal</h3><br><br><br>
+</div>
+<div class="card-text d-flex justify-content-center card-body text-danger ">
+  <h5>Other users in {{location}} that want {{what_to_eat}}</h5><br><br><br>
+</div>
+<section id="dating results" class="dflex">
+  {{> user-details}}
+</section>
+<section>
+  <div class="card-text d-flex justify-content-center card-body text-danger">
+    <h5>Suggested {{what_to_eat}} Restaurants:</h5>
+  </div>
+  {{#each displayRestaurants as |restaurant|}}
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <div id="map{{restaurant.id}}" class="map"></div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{restaurant.dba}}</h5>
+          <p class="card-text">{{restaurant.building}} {{restaurant.street}}</p>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      function loadMap{{restaurant.id}}() {
+        var map = new Microsoft.Maps.Map('#map{{restaurant.id}}', {
+          credentials: 'AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r',
+          center: new Microsoft.Maps.Location({{restaurant.latitude}}, {{restaurant.longitude}}),
+          zoom: 14
+        });
+        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+        map.entities.push(pushpin);
+      }
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.defer = true;
+      script.src = 'https://www.bing.com/api/maps/mapcontrol?callback=loadMap{{restaurant.id}}&key=AmxvwCaW4-uwa0rB0sw9jI-TK6gBNigDexOKflzO5H2NyAcPNm3RskHcxhsyxV_r';
+      document.body.appendChild(script);
+    </script>
+  </div>
+  {{/each}}
+
+</section><br><br>
+  <!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color:#8e39aa; border:#8e39aa">
+  Get New Date Options
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Change cuisine preference and borrough</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-3">
+        &#127961;
+        <select class="custom-select col-sm-10 m-3" id="location">
+          <option name="location" value="Queens" selected>Queens</option>
+          <option name="location" value="Bronx">Bronx</option>
+          <option name="location" value="Manhattan">Manhattan</option>
+          <option name="location" value="Brooklyn">Brooklyn</option>
+          <option name="location" value="Staten Island">Staten Island</option>
+        </select>
+        &#127869;
+        <select class="custom-select custom-select-sm col-sm-10 m-3" id="what-to-eat">
+          <option value="Chinese">Chinese</option>
+          <option value="American">American</option>
+          <option value="Indian">Indian</option>
+          <option value="Thai" selected>Thai</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Pizza">Pizza</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nevermind</button>
+        <button type="button" class="btn btn-primary">Show me Love</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <style>
+    body{
+     background-color: #C68CD9;
+    }
+  </style>

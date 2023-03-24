@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="/css/signup.css"/>
+
+<h2 class="text-center m-4">Welcome to Love-Hungry!</h2>
+<h4 class="text-center">Please put in your info below</h4>
+
+<form class="d-flex p-2 justify-content-center">
+    <div class="form-group ml-4">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="user_name" placeholder="Full Name">
+    </div>
+    <div class="form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control form-control-sm" id="user_email" placeholder="person@gmail.com">
+    </div>
+    <div class="form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">password</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="user_password" placeholder="password">
+    </div>
+    <div class="form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Favorite food/snack</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="favorite_food" placeholder="quesadillas? pork belly?">
+    </div>
+    <div class="form-group col-sm-10 m-2">
+    <label for="exampleFormControlTextarea1">Tell us a bit about yourself</label>
+    <textarea class="form-control" id="user_bio" rows="4"></textarea>
+  </div>
+    <div class="form-group">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">birthdate</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="user_birthdate" placeholder="birthdate">
+    </div>
+    <div class="form-check form-check-inline m-3">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Female">
+      <label class="form-check-label" for="inlineRadio1">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Male">
+      <label class="form-check-label" for="inlineRadio2">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Other">
+      <label class="form-check-label" for="inlineRadio3">Other</label>
+    </div>
+    <div class="form-group">
+      <select class="custom-select col-sm-10 m-3" id="location">
+      <option selected>In which burrough do you live/like to eat?</option>
+      <option name="location" value="Queens">Queens</option>
+      <option name="location" value="Bronx">Bronx</option>
+      <option name="location" value="Manhattan">Manhattan</option>
+      <option name="location" value="Brooklyn">Brooklyn</option>
+      <option name="location" value="Staten Island">Staten Island</option>
+      </select>
+      <select class="custom-select custom-select-sm col-sm-10 m-3" id="what-to-eat">
+      <option selected>Which cuisine do you want as your default option?</option>
+      <option value="Chinese">Chinese</option>
+      <option value="American">American</option>
+      <option value="Indian">Indian</option>
+      <option value="Thai">Thai</option>
+      <option value="Sushi">Sushi</option>
+      <option value="Pizza">Pizza</option>
+      </select>
+      <select class="custom-select custom-select-sm col-sm-10 m-3" id="zodiac">
+      <option selected>What is your zodiac?</option>
+      <option value="Aquarius">Aquarius</option>
+      <option value="Aries">Aries</option>
+      <option value="Pisces">Pisces</option>
+      <option value="Taurus">Taurus</option>
+      <option value="Gemini">Gemini</option>
+      <option value="Cancer">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Virgo">Virgo</option>
+      <option value="Libra">Libra</option>
+      <option value="Scorpio">Scorpio</option>
+      <option value="Sagittarius">Sagittarius</option>
+      <option value="Capricorn">Capricorn</option>
+      </select>
+      <div> </div>
+      <h4 class="m-3">Select an avatar!</h4>
+      <div class="d-flex flex-wrap justify-content-evenly p-4">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios1" value="/images/avatar_01.png" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            {{!-- include avatar options to choose from --}}
+            <img src="/images/avatar_01.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input d-inline" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_02.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_02.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_03.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_03.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_04.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_04.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_05.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_05.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_06.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_06.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_07.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_07.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_08.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_08.png"></img>
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="avatar" id="exampleRadios2" value="/images/avatar_09.png">
+          <label class="form-check-label" for="exampleRadios2">
+            <img src="/images/avatar_09.png"></img>
+          </label>
+        </div>
+      </div>
+      <div class="col-auto d-flex justify-content-center m-4">
+        <button type="submit" class="btn mb-3" id="signup-btn">Submit to Love</button>
+      </div>
+    </div>
+</form>
+<style>
+    body{
+     background-color: #C68CD9;
+    }
+  </style>
+<script src="/js/signup.js"></script>
